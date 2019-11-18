@@ -56,10 +56,10 @@ export default class NewBeer extends Component {
     });
   };
   handleFormSubmit = e => {
-    const allData = this.state;
+    const allInput = this.state;
     e.preventDefault();
     axios
-      .post("https://ih-beers-api2.herokuapp.com/beers/new", allData)
+      .post("https://ih-beers-api2.herokuapp.com/beers/new", allInput)
       .then(e => console.log(e));
   };
 
@@ -116,7 +116,7 @@ export default class NewBeer extends Component {
           type="text"
           placeholder="your name here"
         />
-        <Button submit={e => this.handleFormSubmit(e)} info="Create" />
+        <Button submit={e => this.handleFormSubmit(e)} info="Add new" />
       </form>
     );
   }

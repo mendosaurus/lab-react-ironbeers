@@ -22,11 +22,56 @@
   font-size: large;
 }
 
-Link{
+nav {
+  width: 500px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+nav a {
+  color: white;
   text-decoration: none;
 }
 
+nav a:hover {
+  cursor: pointer;
+}
+
+.contain {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+}
+
+.beer {
+  width: 100vw;
+  display: flex;
+  padding: 50px;
+  background-color: #f7f7f7;
+  border-bottom: 2px solid #9b9b9b;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.beer-image {
+  height: 100px;
+  width: auto;
+  padding: 10px;
+}
+
+.beer-image2 {
+  height: 300px;
+  width: auto;
+}
+
 @keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
