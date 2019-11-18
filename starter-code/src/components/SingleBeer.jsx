@@ -1,12 +1,53 @@
-import React, { Component } from 'react'
-import axios from 'axios'
+import React, { Component } from "react";
+import axios from "axios";
 
 export default class SingleBeer extends Component {
-    render() {
-        return (
-            <div>
-                
+  state = {
+    beer: {}
+  };
+
+  componentDidMount() {
+    console.log(this.props);
+    axios
+      .get(
+        `https://ih-beers-api2.herokuapp.com/beers/${this.props.match.params._id}`
+      )
+      .then(beer => {
+        this.setState({
+          beer: beer.data
+        });
+      });
+  }
+
+  render() {
+    console.log(this.state.beer);
+    return (
+      <div className="container">
+        <div className="row">
+          <div className="col-xs-12 mx-auto">
+            <img
+              src={this.state.beer.image_url}
+              alt=""
+              className="beer-image2"
+            />
+            <div className="beer-row">
+              <div>
+                <h1>{this.state.beer.name}</h1>
+                <h2>{this.state.beer.tagline}</h2>
+              </div>
+              <div>
+                <p>{this.state.beer.first_brewed}</p>
+                <p>{this.state.beer.attenuation_level}</p>
+              </div>
             </div>
-        )
-    }
+
+            <div>
+              <p>{this.state.beer.description}</p>
+              <sub>{this.state.beer.contributed_by}</sub>
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  }
 }
