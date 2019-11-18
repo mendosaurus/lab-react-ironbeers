@@ -7,20 +7,21 @@ export default class SingleBeer extends Component {
   };
 
   componentDidMount() {
-    console.log(this.props);
+    // console.log(this.props);
     axios
       .get(
-        `https://ih-beers-api2.herokuapp.com/beers/${this.props.match.params._id}`
+        `https://ih-beers-api2.herokuapp.com/beers/${this.props.match.params.id}`
       )
-      .then(beer => {
+      .then(response => {
+        console.log(response);
         this.setState({
-          beer: beer.data
+          beer: response.data
         });
       });
   }
 
   render() {
-    console.log(this.state.beer);
+    // console.log(this.state.beer);
     return (
       <div className="container">
         <div className="row">
