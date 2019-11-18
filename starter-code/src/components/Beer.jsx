@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 export default class Beer extends Component {
   render() {
     return (
-      <Link to={`/beer/${this.props.beer.id}`}>
+      <Link to={`/beer/${this.props.beer._id}`}>
         <div className="beer">
           <div>
             <img
